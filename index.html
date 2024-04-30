@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -95,10 +95,6 @@
             margin: 0;
             font-size: 18px;
         }
-        .input-button {
-            display: flex;
-            justify-content: center;
-        }
     </style>
 </head>
 <body>
@@ -106,16 +102,13 @@
         <h1>Scientific Number Acceptor</h1>
         <form id="check-form" action="/check" method="post">
             <label for="number">Enter a number:</label>
-            <div class="input-button">
-                <input type="text" id="number" name="number" required>
-                <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
-            </div>
+            <input type="text" id="number" name="number" required>
+            <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
             <div class="result">
                 <p class="scientific">Yes, it is a scientific number</p>
                 <p class="not-scientific">No, it isn't a scientific number</p>
             </div>
         </form>
-        <a href="javascript:history.back()">Go back</a>
         <div class="about-me">
             <p>Made by: Christina E. K. Tangka</p> <!-- Add Made by me -->
         </div>
