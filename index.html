@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,6 +53,10 @@
             transition: background-color 0.3s;
             text-transform: uppercase; /* Capitalize the text */
             font-size: 18px;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+        button.delete-button {
+            background-color: #f44336; /* Red color for delete button */
         }
         button:hover {
             background-color: #45a049;
@@ -103,6 +108,7 @@
             <label for="number">Enter a number:</label>
             <input type="text" id="number" name="number" required>
             <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
+            <button id="delete-input-button" class="delete-button" type="button">Delete Input</button> <!-- Delete input button -->
             <div class="result">
                 <p class="scientific">Yes, it is a scientific number</p>
                 <p class="not-scientific">No, it isn't a scientific number</p>
@@ -129,6 +135,12 @@
                 resultParagraph.querySelector(".not-scientific").style.display = "block";
             }
         });
+
+        // Function to handle delete input button click
+        document.getElementById("delete-input-button").addEventListener("click", function() {
+            document.getElementById("number").value = ""; // Clear the input field
+        });
     </script>
 </body>
 </html>
+
