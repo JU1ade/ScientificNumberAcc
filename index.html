@@ -42,6 +42,11 @@
             box-sizing: border-box;
             font-size: 18px;
         }
+        .button-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
         button {
             background-color: #4CAF50;
             color: white;
@@ -106,8 +111,10 @@
         <form id="check-form" action="/check" method="post">
             <label for="number">Enter a number:</label>
             <input type="text" id="number" name="number" required>
-            <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
-            <button id="delete-input-button" class="delete-button" type="button">Delete Input</button> <!-- Delete input button -->
+            <div class="button-row">
+                <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
+                <button id="delete-input-button" class="delete-button" type="button">Delete Input</button> <!-- Delete input button -->
+            </div>
             <div class="result">
                 <p class="scientific">Yes, it is a scientific number</p>
                 <p class="not-scientific">No, it isn't a scientific number</p>
