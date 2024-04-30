@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Acceptor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 50%;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Align center horizontally */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 15px;
+            border-radius: 20px;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: uppercase; /* Capitalize the text */
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .result {
+            display: none; /* Initially hidden */
+            margin-top: 30px; /* Move result below the button */
+        }
+        .result.show {
+            display: block; /* Show when needed */
+        }
+        .scientific {
+            color: green;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .not-scientific {
+            color: red;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .about-me {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            margin-top: 50px;
+        }
+        .about-me p {
+            margin: 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scientific Number Acceptor</h1>
+        <form id="check-form" action="/check" method="post">
+            <label for="number">Enter a number:</label>
+            <input type="text" id="number" name="number" required>
+            <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
+            <div class="result">
+                <p class="scientific">Yes, it is a scientific number</p>
+                <p class="not-scientific">No, it isn't a scientific number</p>
+            </div>
+        </form>
+        <a href="/">Go back</a>
+        <div class="about-me">
+            <p>Made by: Christina E. K. Tangka</p> <!-- Add Made by me -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("check-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var resultParagraph = document.querySelector(".result");
+            var inputNumber = document.getElementById("number").value;
+            var isScientific = /^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/.test(inputNumber);
+            if (isScientific) {
+                resultParagraph.classList.add("show");
+                resultParagraph.querySelector(".scientific").style.display = "block";
+                resultParagraph.querySelector(".not-scientific").style.display = "none";
+            } else {
+                resultParagraph.classList.add("show");
+                resultParagraph.querySelector(".scientific").style.display = "none";
+                resultParagraph.querySelector(".not-scientific").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
+
