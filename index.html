@@ -95,6 +95,10 @@
             margin: 0;
             font-size: 18px;
         }
+        .input-button {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -102,8 +106,10 @@
         <h1>Scientific Number Acceptor</h1>
         <form id="check-form" action="/check" method="post">
             <label for="number">Enter a number:</label>
-            <input type="text" id="number" name="number" required>
-            <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
+            <div class="input-button">
+                <input type="text" id="number" name="number" required>
+                <button id="check-button" type="submit">Check</button> <!-- Capitalize CHECK -->
+            </div>
             <div class="result">
                 <p class="scientific">Yes, it is a scientific number</p>
                 <p class="not-scientific">No, it isn't a scientific number</p>
